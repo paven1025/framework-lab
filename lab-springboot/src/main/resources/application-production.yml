@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  profiles: production
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://youcheng-test8.mysql.zhangbei.rds.aliyuncs.com/ding_crm_1
+    username: youcheng
+    password: qTemX6MPAU2P
+    diamond-coord: diamond-coord
+    db-info-zk=zoo1: zoo1.superboss.cc:30002,zoo2.superboss.cc:30002,zoo3.superboss.cc:30002
+    maxActive: 50
+    maxWait: 10000
