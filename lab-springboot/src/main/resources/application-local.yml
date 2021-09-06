@@ -15,3 +15,4 @@ spring:
 
 lab:
   enable: false
+  required_str: abc
