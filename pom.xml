@@ -26,6 +26,8 @@
         <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
         <fastjson.version>1.2.76</fastjson.version>
         <guava.version>29.0-jre</guava.version>
+        <commom-pool.version>2.0</commom-pool.version>
+        <redisson.version>3.11.0</redisson.version>
     </properties>
 
     <dependencies>
@@ -90,24 +92,39 @@
             <version>2.2.0</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
-            <!--            </dependency>-->
+            <!--redisson-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+            </dependency>
+            <!-- redis依赖commons-pool 这个依赖一定要添加 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+            </dependency>
 
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-starter-data-redis</artifactId>-->
-            <!--            </dependency>-->
+            <!-- 支持 @ConfigurationProperties 注解 读取properties或yml配置文件中的值 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
             </dependency>
 
             <dependency>

@@ -9,6 +9,8 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.NotNull;
 
 /**
+ * 第三方配置类
+ *
  * @author cpw
  * @date 2021/9/6 5:34 下午
  */
