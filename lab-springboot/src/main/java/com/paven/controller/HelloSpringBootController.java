@@ -36,4 +36,10 @@ public class HelloSpringBootController {
         System.out.println(labProperties.getRequiredStr());
         return profiles;
     }
+
+    @RequestMapping("/advice")
+    public String testControllerAdvice() {
+        int i = 1 / 0;
+        return profiles;
+    }
 }
